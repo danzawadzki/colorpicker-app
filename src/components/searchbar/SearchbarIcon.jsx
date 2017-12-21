@@ -1,4 +1,5 @@
 import React from "react";
+import "./Searchbar.css";
 
 /**
  * The search bar icon component.
@@ -8,7 +9,10 @@ import React from "react";
  */
 const SearchbarIcon = () => {
     return (
-        <i className="fa fa-search" aria-hidden="true"/>
+        <span className="searchbar__icon">
+            <i className="fa fa-search"
+               aria-hidden="true"/>
+        </span>
     )
 };
 

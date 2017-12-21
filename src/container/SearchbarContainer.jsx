@@ -11,24 +11,30 @@ class SearchbarContainer extends Component {
         this.state = {
             searchKeyword: "",
             suggestionsArray: [],
-            data: []
+            colorsArray: []
         };
         this.setColorsArray = this.setColorsArray.bind(this);
         this.handleChange = handleChange.bind(this);
     }
 
+
     componentDidMount() {
+        //Fetching colors array only once after the component did mount.
         this.setColorsArray();
     }
 
     componentWillUpdate(nextProps, nextState) {
-        console.log("call");
-        if (nextState.searchKeyword !== this.state.searchKeyword && nextState.searchKeyword.length > 1) {
-            let filteredData = [...this.state.data].filter(item =>
-                item.name.includes(nextState.searchKeyword));
-            console.log(filteredData);
+        //Search keyword have to be different from previous and minimum 2 letters length.
+        if (nextState.searchKeyword !== this.state.searchKeyword
+            && nextState.searchKeyword.length > 1) {
+
+            //Spreading colors array to filter only names containing keyword
+            let filteredColorsArray = [...this.state.colorsArray].filter(item =>
+                item.name
+                    .toLowerCase()
+                    .includes(nextState.searchKeyword.toLowerCase()));
             this.setState({
-                suggestionsArray: filteredData
+                suggestionsArray: filteredColorsArray
             })
 
         } else if (nextState.searchKeyword !== this.state.searchKeyword) {
@@ -38,12 +44,15 @@ class SearchbarContainer extends Component {
         }
     }
 
+    /**
+     * The setter for the API response with colors array.
+     * @returns {Promise<Array>}
+     */
     async setColorsArray() {
-        let data = await fetchColorsArray();
-        console.log(data);
+        let colorsArray = await fetchColorsArray();
         try {
             this.setState({
-                data: data
+                colorsArray: colorsArray
             })
         } catch (error) {
             console.log(error);
@@ -53,11 +62,14 @@ class SearchbarContainer extends Component {
     render() {
         return (
             <div>
+            <div className="input-group">
                 <SearchbarInput
                     value={this.state.searchKeyword}
                     handleChange={this.handleChange}/>
                 <SearchbarIcon/>
+            </div>
                 <SearchbarSuggestionsList
+                    setBackgroundColor={this.props.setBackgroundColor}
                     suggestionsArray={this.state.suggestionsArray}/>
             </div>
         )

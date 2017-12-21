@@ -1,0 +1,10 @@
+.searchbar__input {
+  position: relative;
+  border-radius: .25rem !important; }
+
+.searchbar__icon {
+  position: absolute;
+  color: lightgrey;
+  right: .75rem;
+  top: .35rem;
+  z-index: 1000; }
