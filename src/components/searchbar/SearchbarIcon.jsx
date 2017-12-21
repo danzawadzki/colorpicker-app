@@ -1,9 +1,18 @@
 import React from "react";
 
-const SearchbarIcon = (props) => {
+/**
+ * The search bar icon component.
+ *
+ * @returns {ReactElement||XML}
+ * @constructor
+ */
+const SearchbarIcon = () => {
     return (
         <i className="fa fa-search" aria-hidden="true"/>
     )
 };
+
+/** PropTypes */
+SearchbarIcon.propTypes = {};
 
 export default SearchbarIcon;
