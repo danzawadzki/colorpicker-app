@@ -3,7 +3,20 @@
 # The Color Picker - React App
 http://danielzawadzki.com | @danzawadzki
 
-An application based on the React library. Lets you search for a color.
+A simple application built using the React library. 
+It allows you to search for a color from the database.
+
+## Instruction
+    npm start
+Runs the app in development mode.
+    
+    npm run build
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+    npm run watch-css
+    npm run build-css
+Build and/or watch the app sass styles.
 
 ## Dependencies
     "react": "^16.2.0",
