@@ -1,5 +1,3 @@
-![TMDb Logo](https://www.themoviedb.org/assets/static_cache/dd25a8d6d44072f1be5a9daf03470526/images/v4/logos/293x302-powered-by-square-green.png)
-
 # The Color Picker - React App
 http://danielzawadzki.com | @danzawadzki
 
