@@ -23,7 +23,7 @@ const SearchbarSuggestionsListItemButton = (props) => {
             onClick={() => {
                 setBackgroundColor(hexToRgba(hex, .5))
             }}>
-            <i className="fa fa-check" aria-hidden="true"/>
+            <i className="fa fa-check" aria-hidden="true"/> Accept
         </button>
     )
 };

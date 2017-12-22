@@ -62,12 +62,12 @@ class SearchbarContainer extends Component {
     render() {
         return (
             <div>
-            <div className="input-group">
-                <SearchbarInput
-                    value={this.state.searchKeyword}
-                    handleChange={this.handleChange}/>
-                <SearchbarIcon/>
-            </div>
+                <div className="input-group">
+                    <SearchbarInput
+                        value={this.state.searchKeyword}
+                        handleChange={this.handleChange}/>
+                    <SearchbarIcon/>
+                </div>
                 <SearchbarSuggestionsList
                     setBackgroundColor={this.props.setBackgroundColor}
                     suggestionsArray={this.state.suggestionsArray}/>
@@ -75,5 +75,8 @@ class SearchbarContainer extends Component {
         )
     }
 }
+
+/** PropTypes */
+SearchbarContainer.propTypes = {};
 
 export default SearchbarContainer;

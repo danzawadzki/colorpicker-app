@@ -17,7 +17,7 @@ const SearchbarSuggestionsList = (props) => {
     const {suggestionsArray, setBackgroundColor} = props;
 
     return (
-        <ul>
+        <ul className="list-unstyled">
             {suggestionsArray.length > 0
                 ? suggestionsArray.map((item, index) =>
                     <SearchbarSuggestionsListItem
